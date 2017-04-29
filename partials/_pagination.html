@@ -1,0 +1,9 @@
+<nav class="pagination" role="pagination">
+    {% if paginator.has_prev() %}
+        <a class="newer-posts" href="index{{ paginator.previous()}}.html"">&larr; Newer</a> <span class="separator">|</span>
+    {% endif%}
+    <span class="page-number">Page {{ paginator.curr_page }} of {{paginator.pages() }}</span>
+    {% if paginator.has_next() %}
+        <span class="separator">|</span> <a class="older-posts" href="index{{ paginator.next()}}.html">Older &rarr;</a>
+    {% endif%}
+</nav>

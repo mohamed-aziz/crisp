@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+	<head>
+	    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	    <title>{%block title %}{{ SITE_TITLE}}{%endblock%}</title>
+
+	    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,700italic,300,700' rel='stylesheet' type='text/css'>
+	    <link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+	    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	    <link rel="stylesheet" href="https:://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+	    <link rel="stylesheet" type="text/css" href="assets/styles/crisp.css">
+            <link rel="stylesheet" type="text/css" href="assets/styles/syntax.css">
+
+	    <meta name="HandheldFriendly" content="True" />
+	    <meta name="MobileOptimized" content="320" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+			<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+			<!--[if lt IE 9]>
+				<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+				<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+			<![endif]-->
+	    {% block head %}
+            {% endblock %}
+	</head>
+	<body class="{{body_class}}">
+		<header id="header">
+			{# {{#if @blog.logo}}<a id="logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}} #}
+		    <h1><a href="{{ SITE_URL }}">{{ SITE_TITLE }}</a></h1>
+		    <p>{{ DESCRIPTION }}</p>
+                        {% include 'partials/_follow.html' %}
+                        {% include 'partials/_navigation.html' %}
+		</header>
+		<main id="content">
+		    {% block content %}
+
+                    {% endblock %}
+		</main>
+		<footer id="footer">
+		    <section id="footer-message">&copy; {{ CURR_DATE.year }} {{ SITE_TITLE }}. All rights reserved. Powered by <a href="https://github.com/mohamed-aziz/simplegen" target="_blank">Simplegen</a>. <a href="https://github.com/mohamed-aziz/simplegen-crisp" target="_blank">Crisp</a> theme by <a href="http://kathyqian.com" target="_blank">Kathy Qian</a>.</section>
+		</footer>
+                {% block footer %}
+                {% endblock %}
+	        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+
+                {% include 'partials/_javascript.html' %}
+	<script>hljs.initHighlightingOnLoad();</script>
+	</body>
+</html>

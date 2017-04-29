@@ -1,12 +1,14 @@
 # Crisp
 
+**This instructions are not valid for simplegen.**
+
 A minimalist, responsive, and open-source theme for [Ghost](http://ghost.org) by [Kathy Qian](http://kathyqian.com). Last tested with Ghost v0.11.4.
 
-![Index](https://raw.github.com/kathyqian/crisp-ghost-theme/master/screenshots/list.png)   
+![Index](https://raw.github.com/kathyqian/crisp-ghost-theme/master/screenshots/list.png)
 
 ### Required Steps for Installation
 
-1. Download the files   
+1. Download the files
 2. Replace the `example` disqus_shortname with your shortname on *line 4* of **partials/comments.hbs**, or delete the #comments div to remove comments altogether
 3. Configure the follow buttons in **partials/follow.hbs** (see section below)
 4. Add the folder to the **content/themes** directory of your Ghost installation
