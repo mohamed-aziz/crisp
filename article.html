@@ -7,7 +7,7 @@
 {% block content %}
 
 <article id="{{ article.url }}" class="{{post_class}}">
-    <div class="post-stamp">{{article.date.strftime('%d %B %Y, a calm %A at %H:%M')}}<span class="taglist"></span></div>
+    <div class="post-stamp">{{article.date.strftime('%d %B %Y, a calm %A at %H:%M')}}<span class="taglist">{% if article.tags %} &middot; {% for tag in article.tags %}<a href="tags.html#{{tag}}">{{tag}}</a> {%endfor%}{% endif %}</span></div>
     <h1 class="post-title">{{article.title}}</h1>
     {{article.html}}
     {# {% include 'partials/_share.html' %} #}

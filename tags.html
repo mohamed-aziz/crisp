@@ -2,10 +2,10 @@
 
 {% block content %}
     {% for key in tags.keys() %}
-	<h1 class="post-title">{{key }}</h1>
-	{% for article in tags[key]  %}
-            <section id="{{ article.url }}">
-                <h3 class="post-title"><a href="{{article.url}}.html">{{article.title}}</a><span class="separator"> &middot; </span>{{article.date.strftime('%d %B %Y') }}<span class="taglist"></span></h3>
+<h1 class="post-title" id="{{ key }}">{{key }}</h1>
+{% for article in tags[key]  %}
+<section id="{{ article.url }}">
+    <h3 class="post-title"><a href="{{article.url}}.html">{{article.title}}</a><span class="separator"> &middot; </span>{{article.date.strftime('%d %B %Y') }}<span class="taglist">{% if article.tags %} &middot; {% for tag in article.tags %}<a href="tags.html#{{tag}}">{{tag}}</a> {%endfor%}{% endif %}</span></h3>
             </section>
 	{% endfor %}
     {% endfor %}
